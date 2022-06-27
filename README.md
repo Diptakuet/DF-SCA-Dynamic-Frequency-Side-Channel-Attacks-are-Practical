@@ -1,0 +1,2 @@
+# DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical
+We present DF-SCA, which is a software-based dynamic frequency side-channel attack on Linux and Android OS devices. We show that Dynamic Voltage and Frequency Scaling (DVFS) feature in modern systems can be utilized to perform website fingerprinting attacks for Google Chrome and Tor browsers on modern Intel, AMD, and ARM architectures. Moreover, we extract properties of keystroke patterns on frequency readings, that leads to 95% accuracy to distinguish the keystrokes from other activities on Android phones.
