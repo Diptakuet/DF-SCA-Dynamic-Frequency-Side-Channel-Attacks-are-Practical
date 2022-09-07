@@ -1,11 +1,11 @@
 #!/bin/bash
 
-Nm=2   # Number of measurement per website
+Nm=2     # Number of measurement per website
 Ns=1000  # Number of samples
 
 for ((i=1; i<=$Nm; i++))
 do
-  taskset -c 1 google-chrome www.twitter.com/ &
+  taskset -c 1 google-chrome www.twitter.com/ &           # update url for different websites     
   for ((j=1; j<=$Ns; j++))
   do 
     Freq_CPU=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq)
