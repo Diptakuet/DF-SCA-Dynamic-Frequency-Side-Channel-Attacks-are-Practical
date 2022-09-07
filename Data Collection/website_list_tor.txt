@@ -1,0 +1,101 @@
+# Selected from Alexa top 250 list
+tor1: facebook.com
+tor2: amazon.com
+tor3: Google.com
+tor4: Netflix.com
+tor5: yahoo.us
+tor6: Wikipedia.org
+tor7: Aliexpress.com
+tor8: Bing.com
+tor9: Ebay.com
+tor10: reddit.com
+tor11: twitter.com
+tor12: Linkedin.com
+tor13: Live.com
+tor14: Diply.com
+tor15: Ntd.tv
+tor16: Cnn.com
+tor17: Pinterest.com
+tor18: Office.com
+tor19: microsoft.com
+tor20: chase.com
+tor21: Nytimes.com
+tor22: Blogspot.com
+tor23: paypal.com
+tor24: Wordpress.com
+tor25: Espn.com
+tor26: Wikia.com
+tor27: Wikileaks.org
+tor28: Imdb.com
+tor29: Balkanleaks.eu
+tor30: Unileaks.org
+tor31: Globaleaks.com
+tor32: Liveleak.com
+tor33: Globalwitness.org
+tor34: Wikispooks.com
+tor35: Officeleaks.com
+tor36: Publeaks.nl
+tor37: Aljazeera.com/investigations
+tor38: apple.com
+tor39: adobe.com
+tor40: canva.com
+tor41: indeed.com
+tor42: intuit.com
+tor43: jd.com
+tor44: qq.com
+tor45: target.com
+tor46: tiktok.com
+tor47: wellsfargo.com
+tor48: ups.com 
+tor49: zillow.com
+tor50: zoom.com
+tor 51: instagram.com
+tor 52: whatsapp.com
+tor 53: fandom.com
+tor 54: instructure.com
+tor 55: twitch.tv
+tor 56: walmart.com
+tor 57: github.com
+tor 58: stackoverflow.com
+web 59: douban.com
+web 60: mail.ru
+web 61: quora.com
+web 62: tumblr.com
+web 63: bbc.com
+web 64: medium.com
+web 65: dropbox.com
+web 66: godaddy.com
+web 67: imgur.com
+web 68: soundcloud.com
+web 69: discord.com
+web 70: booking.com
+web 71: yandex.ru
+web 72: vimeo.com
+web 73: etsy.com
+web 74: slideshare.net
+web 75: vice.com
+web 76: foxnews.com
+web 77: 9gag.com
+web 78: slack.com
+web 79: telegram.org
+web 80: forbes.com
+web 81: roblox.com
+web 82: globo.com
+web 83: w3schools.com
+web 84: flipkart.com
+web 85: fedex.com
+web 86: scribd.com
+web 87: mediafire.com
+web 88: researchgate.net
+web 89: softonic.com
+web 90: rambler.ru
+web 91: washingtonpost.com
+web 92: theguardian.com
+web 93: cloudflare.com
+web 94: wordpress.org
+web 95: gravatar.com
+web 96: brandbucket.com
+web 97: who.int
+web 98: dailymotion.com
+web 99: nature.com
+web 100: time.com
