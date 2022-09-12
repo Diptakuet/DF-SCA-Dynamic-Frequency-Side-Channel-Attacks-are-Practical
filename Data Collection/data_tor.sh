@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for j in {1..100};                                          # Number of measurement = 100
+for j in {1..100};                                          # Number of measurements = 100
 do
   taskset -c 1 ./firefox --allow-remote &
   sleep 10s 
