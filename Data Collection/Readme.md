@@ -4,9 +4,9 @@ For collecting CPU frequency for different websites follow the steps mentioned b
 `cd ~`<br/>
 `cd Data Collection/`<br/>
 `script -a <path/name.txt>`<br/>
-For google-chrome:
+<i>For google-chrome:<br/></i>
 `./data_chrome.sh`<br/> 
-For Tor browser:
+<i>For Tor browser:<br/></i>
 `./data_tor.sh`<br/>
 `exit`
 
