@@ -1,7 +1,7 @@
 #!/bin/bash
 
 Nm=100     # Number of measurement per website
-Ns=1000  # Number of samples
+Ns=1000    # Number of samples
 
 for ((i=1; i<=$Nm; i++))
 do
