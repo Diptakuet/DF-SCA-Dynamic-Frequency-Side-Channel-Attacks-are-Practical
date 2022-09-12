@@ -12,4 +12,4 @@ It is to be noted that, the script only works for chrome browser in all our setu
 
 The url liks of 100 webpages selected for Chrome browser are listed in [website_list_google_chrome.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data%20Collection/website_list_google_chrome.txt)
 
-# Prepoccessing Data:
+# Preprocessing Data:
