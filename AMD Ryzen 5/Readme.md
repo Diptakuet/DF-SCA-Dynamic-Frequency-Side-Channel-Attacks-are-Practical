@@ -14,7 +14,8 @@ The website fingerprinting is tested with six different scaling governors avaial
   * [CNN_1D.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/CNN_1D.py): The CNN model trained during the offline phase for website fingerprinting. It takes the train and validation data as input and make the prediction. After the training complete, the model is saved as [Model1.h5](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Model1.h5).
   * [Restored_model_val.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Restored_model_val.py): The pretrained CNN model which is saved as `Model1.h5`, is loaded to make a prediction on the validation dataset. 
   * [Restored_model_test.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Restored_model_test.py): The pretrained CNN model which is saved as `Model1.h5`, is loaded to make a prediction on the test dataset. This script is used to evaluate the performance of the prediction model during the online phase.
-  * 
-   
+  * [knn.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/knn.py), [rf.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/rf.py), [svm.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/knn.py): The performance of the prediction model is tested with other ML algorithm-based model, such as Kth nearest neighbour (KNN), Random forest (RF), and Support Vector Machine (SVM).
+
+
 
 
