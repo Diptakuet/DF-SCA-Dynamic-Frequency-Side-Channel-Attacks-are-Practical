@@ -1,6 +1,5 @@
 # Website Fingerprinting on AMD Ryzen 5
 ## Google-Chrome Scenario:
-`cd Chrome/` <br/>
 The website fingerprinting is tested with six different scaling governors avaialable in our device. The default scaling governor of AMD Ryzen 5 is ondemand. The folders are named based on the scaling governors. As example, we will explain the scanario of deafult scaling governor ondemand. The explanation will be consistent with other governors as well. <br/>
 - [ondemand](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD%20Ryzen%205/Chrome/ondemand)
   * [Data](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD%20Ryzen%205/Chrome/ondemand/Data): The final preprocessed data splitted among train, validation, and test.<br/>
@@ -19,16 +18,20 @@ The website fingerprinting is tested with six different scaling governors avaial
 
 # Instruction to run
 - Offline phase:
-  * The CNN_1D.py is executed to train a model using the data collected from AMD Ryzen 5. The pretrained model is saved as `Model1.h5`.
+  * The `CNN_1D.py` is executed to train a model using the data collected from AMD Ryzen 5. The pretrained model is saved as `Model1.h5`. 
   * To look at the accuracy on validation dataset, Run the Restored_model_val.py. It is to be noted that, GPU support with appropriate environment (tensorflow backened with keras) is required for executing the code.
-     * ./Restored_model_val.py
+     * `cd Chrome/ondemand/`
+     * `./Restored_model_val.py`
  - Online phase:
    * Run the Restored_model_test.py to find out the accuracy on test dataset. This accuracy is reported on Table 2 of the paper.
-     *  ./Restored_model_test.py
+     *  `./Restored_model_test.py`
    * For checking the performance of other models except for our proposed CNN, run the following code:
      * `knn.py` <br/>
      * `svm.py` <br/>
-     * `rf.py' <br/>
+     * `rf.py` <br/>
+ - If anyone is interested to create a new pretrained model on the similar set up, then run the `CNN_1D.py` after updating the name of the model. Then, upate the name of the loaded model in `Restored_model_test.py`. However, It is to be noted that, for a newly created pretrained model, the accuracy will slightly differ than the one we reported in the paper. For reproducing the exact accuracy, we have attached the pretrained model here named `Model1.h5`.  
+## Tor Browser Scenario:
+
 
 
 
