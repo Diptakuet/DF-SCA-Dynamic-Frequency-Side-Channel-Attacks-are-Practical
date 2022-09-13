@@ -37,7 +37,6 @@ print(x_test.shape)
 print(y_train['y'].shape)
 print(y_test1['y'].shape)
 
-
 # In[8]:
 
 
@@ -101,8 +100,8 @@ history = model.fit(x_train, y_train, epochs=50, validation_data=(x_test, y_test
 # In[14]:
 
 
-np.save('History1.npy',history.history)
-model.save('Model1.h5')
+#np.save('History1.npy',history.history)
+model.save('<Model_name.h5>')                 # Update the Model Name
 
 # In[15]:
 
