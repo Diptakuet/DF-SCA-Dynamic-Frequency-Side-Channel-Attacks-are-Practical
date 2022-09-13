@@ -25,6 +25,10 @@ The website fingerprinting is tested with six different scaling governors avaial
  - Online phase:
    * Run the Restored_model_test.py to find out the accuracy on test dataset. This accuracy is reported on Table 2 of the paper.
      *  ./Restored_model_test.py
+   * For checking the performance of other models except for our proposed CNN, run the following code:
+     * `knn.py` <br/>
+     * `svm.py` <br/>
+     * `rf.py' <br/>
 
 
 
