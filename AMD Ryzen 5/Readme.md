@@ -18,10 +18,13 @@ The website fingerprinting is tested with six different scaling governors avaial
 
 
 # Instruction to run
-- Checking the current scaling governor in the victim's device:
-`cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_governor` <br/>
-- For offline phase, the attacker can change the scaling governor in his device to match with the victim's device and collect data which will be utilized to train the ML model. The command for changing the current scalling governor to `ondemand` mode: 
-`echo "ondemand" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`<br/>
+- Offline phase:
+  * The CNN_1D.py is executed to train a model using the data collected from AMD Ryzen 5. The pretrained model is saved as `Model1.h5`.
+  * To look at the accuracy on validation dataset, Run the Restored_model_val.py. It is to be noted that, GPU support with appropriate environment (tensorflow backened with keras) is required for executing the code.
+     * ./Restored_model_val.py
+ - Online phase:
+   * Run the Restored_model_test.py to find out the accuracy on test dataset. This accuracy is reported on Table 2 of the paper.
+     *  ./Restored_model_test.py
 
 
 
