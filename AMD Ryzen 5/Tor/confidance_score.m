@@ -1,5 +1,4 @@
 clc;clear all;
-cd 'D:\CPR Research\Topic1. CPU Frequency\Revision\Laptop\AMD\Tor\FinalData';
 a=readmatrix('Raw_prediction_cnn.txt');
 
 num_web=100;
