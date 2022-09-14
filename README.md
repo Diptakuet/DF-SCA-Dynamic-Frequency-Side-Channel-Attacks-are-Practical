@@ -117,3 +117,7 @@ All the results are reported in Table 5 of the paper.
 # Password Detection:
 In the password detection scenario, we assume that a phone user enters her password to log into her account in a banking application. Our goal is not to outperform the existing works in the keystroke attack literature, but rather demonstrates DF-SCA attack has sufficient resolution and accuracy to perform a password detection attack. For the target, Bank of America (BoA) mobile application is chosen.
 
+The CPU frequnecy traces for different profiles passwords mentioned in Table 9 of the paper are made available in [mat_files_password](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/ARM_Cortex_A-73/Keystroke/mat_files_passwords). Based on the length of characters, individual frequnency traces of different passwords are collected, preprocessed, and saved as .mat file. In [Artifact_dataset_model_Code_Keystroke](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/ARM_Cortex_A-73/Keystroke/Artifact_dataset_model_Code_Keystroke), the splitted data among training and test are included with the proposed knn model. 
+* `cd ARM_Cortex_A-73/Keystroke/Artifact_dataset_model_Code_Keystroke/knn_all.m` <br/>
+
+
