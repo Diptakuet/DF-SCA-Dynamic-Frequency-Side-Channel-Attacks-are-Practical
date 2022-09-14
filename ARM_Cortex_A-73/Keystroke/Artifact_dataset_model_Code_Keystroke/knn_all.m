@@ -31,7 +31,7 @@ model.BreakTies = 'nearest';
 [label, score] = predict(model,data_test);
 
 
-cnt = 0;
+cnt = 1;
 for i = 1 : length(label)
     if (label(i)==floor((i-1)/3))
         cnt = cnt + 1;
