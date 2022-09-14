@@ -1,8 +1,7 @@
 # Data Collection:
 
 For collecting CPU frequency for different websites follow the steps mentioned below:<br/>
-- Checking the current scaling governor in the victim's device:
-
+- Checking the current scaling governor in the victim's device: <br/>
 `cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_governor` <br/>
 - For offline phase, the attacker can change the scaling governor in his device to match with the victim's device and collect data which will be utilized to train the ML model. The command for changing the current scalling governor to `ondemand` mode: 
 `echo "ondemand" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`<br/>
