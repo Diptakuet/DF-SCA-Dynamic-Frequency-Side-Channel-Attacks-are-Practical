@@ -96,7 +96,7 @@ For the Tor Browser scenario, the explanation remains same, as we have named the
   * `./Restored_model_val.py`<br/>
 After running this python script, the test accuracy for Tor Browser will be printed out. In addition, the raw predictions for different classes will be saved as [Raw_Prediction_cnn.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Tor/Raw_Prediction_cnn.txt). Later, for finding out the Top 5 score as reported in Table 2, run the MATLAB code `confidance_score.m`.
 
-For ML models other than CNN (For example: SVM), run `./svm.py`. This will provide the accuracy as well as save the raw predictions as [Raw_Prediction_svm.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Tor/Raw_Prediction_svm.txt). Update the `confidance_score.m` by replacing the `Raw_Prediction_cnn.txt` file with `Raw_Prediction_svm.txt`. Run the `confidance_score.m` to get the Top 5 score for the Tor Browser.
+For ML models other than CNN (For example: SVM), run `./svm.py`. This will provide the accuracy as well as save the raw predictions as [Raw_prediction_svm.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Tor/Raw_prediction_svm.txt). Update the `confidance_score.m` by replacing the `Raw_Prediction_cnn.txt` file with `Raw_Prediction_svm.txt`. Run the `confidance_score.m` to get the Top 5 score for the Tor Browser.
 
 It is to be noted that, for Tor Browser scenario, we have carried out the experiment only for the default scaling governor of the device.
 
