@@ -26,11 +26,15 @@ The website fingerprinting is tested with six different scaling governors avaial
    * Run the Restored_model_test.py to find out the accuracy on test dataset. This accuracy is reported on Table 2 of the paper.
      *  `./Restored_model_test.py`
    * For checking the performance of other models except for our proposed CNN, run the following code:
-     * `knn.py` <br/>
-     * `svm.py` <br/>
-     * `rf.py` <br/>
+     * `./knn.py` <br/>
+     * `./svm.py` <br/>
+     * `./rf.py` <br/>
  - If anyone is interested to create a new pretrained model on the similar set up, then run the `CNN_1D.py` after updating the name of the model. Then, upate the name of the loaded model in `Restored_model_test.py`. However, It is to be noted that, for a newly created pretrained model, the accuracy will slightly differ than the one we reported in the paper. For reproducing the exact accuracy, we have attached the pretrained model here named `Model1.h5`.  
 ## Tor Browser Scenario:
+For the Tor Browser scenario, the explanation remains same, as we have named the file in the same manner as Chrome Browser scenario for the convenience. Although the test accuracy on the Tor browser is comparatively lower than the Google Chrome scenario, we also provide the top 5 accuracy for Tor browser scenario, which corresponds to the accuracy rate at which the correct website belongs among the top 5 predictions of the ML model as presented in Table 2. For this part, we have modified the `Restored_model_test.py` which will automaitcally save the raw predictions for different classes. Hence, Similar to google-chrome, the following commands need to run for reproducing the result: <br/>
+  * `cd Tor/`
+  * `./Restored_model_val.py`
+After running this python script, the test accuracy for Tor Browser will be printed out. In addition, the raw predictions for different classes will be saved as [Raw_Prediction_cnn.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Tor/Raw_Prediction_cnn.txt). Later, for finding out the Top 5 score as reported in Table 2, run the MATLAB code `.m`
 
 
 
