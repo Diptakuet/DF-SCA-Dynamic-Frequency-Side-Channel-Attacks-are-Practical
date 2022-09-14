@@ -1,4 +1,14 @@
-# Website Fingerprinting on AMD Ryzen 5
+# Website Fingerprinting:
+Website fingerprinting is carried out on four different devices. The procedures and explanations will remain consistent for all of them. As example, we will explain the procedures for reproducing the result for AMD Ryzen 5. The directories are named based on the different microarchitectures, such as `AMD Ryzen 5`, `Intel Comet Lake`, `Intel Tiger Lake`, and `ARM Cortex A-73`.
+
+The `Data Collection` directory contains the relevant script for collecting CPU frequency data based on the Algorithm 1 presented in the paper.
+
+The `Universal ML` directory contains the code from which Table 5 is generated to prove the concept of universal ML explained in Section 9: Discussion. 
+
+In the following section, we will explain the case study for AMD Ryzen 5. The procedures will remain same for other microarchitectures as mentioned earlier.
+
+`cd AMD Ryzen 5/`<br/>
+
 ## Google-Chrome Scenario:
 The website fingerprinting is tested with six different scaling governors avaialable in our device. The default scaling governor of AMD Ryzen 5 is ondemand. The folders are named based on the scaling governors. As example, we will explain the scanario of deafult scaling governor ondemand. The explanation will be consistent with other governors as well. <br/>
 - [ondemand](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD%20Ryzen%205/Chrome/ondemand)
