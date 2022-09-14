@@ -100,3 +100,11 @@ After running this python script, the test accuracy for Tor Browser will be prin
 For ML models other than CNN (For example: SVM), run `./svm.py`. This will provide the accuracy as well as save the raw predictions as [Raw_Prediction_svm.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Tor/Raw_Prediction_svm.txt). Update the `confidance_score.m` by replacing the `Raw_Prediction_cnn.txt` file with `Raw_Prediction_svm.txt`. Run the `confidance_score.m` to get the Top 5 score for the Tor Browser.
 
 It is to be noted that, for Tor Browser scenario, we have carried out the experiment only for the default scaling governor of the device.
+
+## Universal ML Model for different CPU models 
+In the previous experiment, we trained separate ML models for Intel, AMD, and ARM architectures to obtain the highest website fingerprinting accuracy. However, it is still unclear whether it is possible to replace the individual ML models with a universal ML model trained with the CPU frequency data from several micro-architectures. Thus, an attacker can use a combined ML model without requiring to know the exact targeted microarchitecture for website fingerprinting. For this purpose, initially, we combined the CPU frequency data collected with powersave governor from both Intel Tiger Lake and Intel Comet Lake architectures to train a universal CNN model and evaluated the performance of the universal model with the test
+data. The [Intel combined](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/Universal%20ML/Intel%20combined) directory incorporates the relevant data and codes.
+
+`cd Universal ML/Intel combined/` <br/>
+`./Restored_model_test.py` <br/>
+
