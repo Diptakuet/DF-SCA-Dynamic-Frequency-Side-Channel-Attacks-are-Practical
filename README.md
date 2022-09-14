@@ -20,7 +20,7 @@ We present DF-SCA, which is a software-based dynamic frequency side-channel atta
   * Linux Kernel: 5.13.0-44-generic
   * Google Chrome version 101.0.4951.64
   * Tor browser version 10.5.10
-- ## ARM Cortex-A53 Microarchitecture
+- ## ARM Cortex-A Microarchitecture
   * CPU Model: Four ARM Cortex-A53 and Four ARM Cortex-A73 cores
   * OS: Android 9
   * Google Chrome version 97.0.4692.98
