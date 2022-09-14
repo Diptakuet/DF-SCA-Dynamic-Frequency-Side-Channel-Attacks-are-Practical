@@ -37,8 +37,7 @@ For collecting CPU frequency for different websites follow the steps mentioned b
 - For offline phase, the attacker can change the scaling governor in his device to match with the victim's device and collect data which will be utilized to train the ML model. The command for changing the current scalling governor to `ondemand` mode: 
 `echo "ondemand" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`<br/>
 - Data collection: <br/>
-`cd ~`<br/>
-`cd Data Collection/`<br/>
+`cd Data_Collection/`<br/>
 `script -a <path/name.txt>`<br/>
 `./data_chrome.sh`<br/> 
 `exit`
@@ -58,7 +57,7 @@ The `Universal ML` directory contains the code from which Table 5 is generated t
 
 In the following section, we will explain the case study for AMD Ryzen 5. The procedures will remain same for other microarchitectures as mentioned earlier.
 
-`cd AMD Ryzen 5/`<br/>
+`cd AMD_Ryzen_5/`<br/>
 
 ## Google-Chrome Scenario:
 The website fingerprinting is tested with six different scaling governors avaialable in our device. The default scaling governor of AMD Ryzen 5 is ondemand. The folders are named based on the scaling governors. As example, we will explain the scanario of deafult scaling governor ondemand. The explanation will be consistent with other governors as well. <br/>
@@ -105,6 +104,6 @@ It is to be noted that, for Tor Browser scenario, we have carried out the experi
 In the previous experiment, we trained separate ML models for Intel, AMD, and ARM architectures to obtain the highest website fingerprinting accuracy. However, it is still unclear whether it is possible to replace the individual ML models with a universal ML model trained with the CPU frequency data from several micro-architectures. Thus, an attacker can use a combined ML model without requiring to know the exact targeted microarchitecture for website fingerprinting. For this purpose, initially, we combined the CPU frequency data collected with powersave governor from both Intel Tiger Lake and Intel Comet Lake architectures to train a universal CNN model and evaluated the performance of the universal model with the test
 data. The [Intel combined](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/Universal%20ML/Intel%20combined) directory incorporates the relevant data and codes.
 
-`cd Universal ML/Intel combined/` <br/>
+`cd Universal_ML/Intel_combined/` <br/>
 `./Restored_model_test.py` <br/>
 
