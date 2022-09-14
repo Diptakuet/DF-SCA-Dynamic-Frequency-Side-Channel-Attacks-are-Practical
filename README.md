@@ -27,3 +27,4 @@ We present DF-SCA, which is a software-based dynamic frequency side-channel atta
   * Bank of America application version 21.11.04
 - ## Additional 
   * Nvidia GeForce RTX 3090 GPU card
+  * MATLAB R2021a
