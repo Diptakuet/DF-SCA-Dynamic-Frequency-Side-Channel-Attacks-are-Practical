@@ -76,7 +76,7 @@ The website fingerprinting is tested with six different scaling governors avaial
   * [knn.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/knn.py), [rf.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/rf.py), [svm.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/knn.py): The performance of the prediction model is tested with other ML algorithm-based model, such as Kth nearest neighbour (KNN), Random forest (RF), and Support Vector Machine (SVM).
 
 
-### Instruction to run
+### Instruction to run:
 - Offline phase:
   * The `CNN_1D.py` is executed to train a model using the data collected from AMD Ryzen 5. The pretrained model is saved as `Model1.h5`. 
   * To look at the accuracy on validation dataset, Run the Restored_model_val.py. It is to be noted that, GPU support with appropriate environment (tensorflow backened with keras) is required for executing the code.
@@ -100,7 +100,7 @@ For ML models other than CNN (For example: SVM), run `./svm.py`. This will provi
 
 It is to be noted that, for Tor Browser scenario, we have carried out the experiment only for the default scaling governor of the device.
 
-## Universal ML Model for different CPU models 
+## Universal ML Model for different CPU models: 
 In the previous experiment, we trained separate ML models for Intel, AMD, and ARM architectures to obtain the highest website fingerprinting accuracy. However, it is still unclear whether it is possible to replace the individual ML models with a universal ML model trained with the CPU frequency data from several micro-architectures. Thus, an attacker can use a combined ML model without requiring to know the exact targeted microarchitecture for website fingerprinting. For this purpose, initially, we combined the CPU frequency data collected with powersave governor from both Intel Tiger Lake and Intel Comet Lake architectures to train a universal CNN model and evaluated the performance of the universal model with the test
 data. The [Intel_combined](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/Universal_ML/Intel_combined) directory incorporates the relevant data and codes.
 
@@ -113,4 +113,7 @@ Later, we added the CPU frequency data set from the AMD Ryzen 5 architecture col
 `./Restored_model_test.py` <br/>
 
 All the results are reported in Table 5 of the paper.
+
+# Password Detection:
+In the password detection scenario, we assume that a phone user enters her password to log into her account in a banking application. Our goal is not to outperform the existing works in the keystroke attack literature, but rather demonstrates DF-SCA attack has sufficient resolution and accuracy to perform a password detection attack. For the target, Bank of America (BoA) mobile application is chosen.
 
