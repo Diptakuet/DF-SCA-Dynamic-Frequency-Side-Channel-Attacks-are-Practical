@@ -38,6 +38,7 @@ After running this python script, the test accuracy for Tor Browser will be prin
 
 For ML models other than CNN (For example: SVM), run `./svm.py`. This will provide the accuracy as well as save the raw predictions as [Raw_Prediction_svm.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Tor/Raw_Prediction_svm.txt). Update the `confidance_score.m` by replacing the `Raw_Prediction_cnn.txt` file with `Raw_Prediction_svm.txt`. Run the `confidance_score.m` to get the Top 5 score for the Tor Browser.
 
+It is to be noted that, for Tor Browser scenario, we have carried out the experiment only for the default scaling governor of the device.
 
 
 
