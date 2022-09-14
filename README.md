@@ -119,5 +119,6 @@ In the password detection scenario, we assume that a phone user enters her passw
 
 The CPU frequnecy traces for different profiles passwords mentioned in Table 9 of the paper are made available in [mat_files_password](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/ARM_Cortex_A-73/Keystroke/mat_files_passwords). Based on the length of characters, individual frequnency traces of different passwords are collected, preprocessed, and saved as .mat file. In [Artifact_dataset_model_Code_Keystroke](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/ARM_Cortex_A-73/Keystroke/Artifact_dataset_model_Code_Keystroke), the splitted data among training and test are included with the proposed knn model. 
 * `cd ARM_Cortex_A-73/Keystroke/Artifact_dataset_model_Code_Keystroke/knn_all.m` <br/>
+* Run knn_all.m in MATLAB
 
 
