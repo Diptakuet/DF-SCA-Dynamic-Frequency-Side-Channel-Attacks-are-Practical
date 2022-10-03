@@ -20,7 +20,7 @@ We present DF-SCA, which is a software-based dynamic frequency side-channel atta
   * Linux Kernel: 5.13.0-44-generic
   * Google Chrome version 101.0.4951.64
   * Tor browser version 10.5.10
-- ## ARM Cortex-A53 Microarchitecture
+- ## ARM Cortex-A Microarchitecture
   * CPU Model: Four ARM Cortex-A53 and Four ARM Cortex-A73 cores
   * OS: Android 9
   * Google Chrome version 97.0.4692.98
@@ -37,15 +37,14 @@ For collecting CPU frequency for different websites follow the steps mentioned b
 - For offline phase, the attacker can change the scaling governor in his device to match with the victim's device and collect data which will be utilized to train the ML model. The command for changing the current scalling governor to `ondemand` mode: 
 `echo "ondemand" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`<br/>
 - Data collection: <br/>
-`cd ~`<br/>
-`cd Data Collection/`<br/>
+`cd Data_Collection/`<br/>
 `script -a <path/name.txt>`<br/>
 `./data_chrome.sh`<br/> 
 `exit`
 
-In [data_chrome.sh](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data%20Collection/data_chrome.sh) update the `url` for different websites. Following these instructions will save frequency traces of 100 measurements of a specific url in `name.txt` file. Each measurement will consists of 1000 samples with 0.01s resolution. The `data_chrome.sh` script needs to run 100 times for 100 different url links of webpages. The url liks of 100 webpages selected for Chrome browser are listed in [website_list_google_chrome.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data%20Collection/website_list_google_chrome.txt)
+In [data_chrome.sh](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data_Collection/data_chrome.sh) update the `url` for different websites. Following these instructions will save frequency traces of 100 measurements of a specific url in `name.txt` file. Each measurement will consists of 1000 samples with 0.01s resolution. The `data_chrome.sh` script needs to run 100 times for 100 different url links of webpages. The url liks of 100 webpages selected for Chrome browser are listed in [website_list_google_chrome.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data_Collection/website_list_google_chrome.txt)
 
-For tor browser scenario, replace the `./data_chrome.sh` by `./data_tor.sh` command. For tor browser, the number of samples is increased from 1000 to 3000 samples, as it requires more time to load the webpages. Similar to chrome browser, the [data_tor.sh](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data%20Collection/data_tor.sh) script needs to be run for 100 times by updating the url of the webpages, which are listed in [website_list_tor.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data%20Collection/website_list_tor.txt)
+For tor browser scenario, replace the `./data_chrome.sh` by `./data_tor.sh` command. For tor browser, the number of samples is increased from 1000 to 3000 samples, as it requires more time to load the webpages. Similar to chrome browser, the [data_tor.sh](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data_Collection/data_tor.sh) script needs to be run for 100 times by updating the url of the webpages, which are listed in [website_list_tor.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/Data_Collection/website_list_tor.txt)
 
 After preprocessing the data, the final data for different devices are allocated to the appropriate folders.
 
@@ -58,26 +57,26 @@ The `Universal ML` directory contains the code from which Table 5 is generated t
 
 In the following section, we will explain the case study for AMD Ryzen 5. The procedures will remain same for other microarchitectures as mentioned earlier.
 
-`cd AMD Ryzen 5/`<br/>
+`cd AMD_Ryzen_5/`<br/>
 
 ## Google-Chrome Scenario:
 The website fingerprinting is tested with six different scaling governors avaialable in our device. The default scaling governor of AMD Ryzen 5 is ondemand. The folders are named based on the scaling governors. As example, we will explain the scanario of deafult scaling governor ondemand. The explanation will be consistent with other governors as well. <br/>
-- [ondemand](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD%20Ryzen%205/Chrome/ondemand)
-  * [Data](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD%20Ryzen%205/Chrome/ondemand/Data): The final preprocessed data splitted among train, validation, and test.<br/>
-    * [X_train_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Data/X_train_100.csv): CPU frequency traces of 80 measurements from every 100 websites that constitutes the train dataset. Each row refers to the 1000 samples/measurement (Shape: 8000x1000). <br/>
-    * [Y_train_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Data/X_train_100.csv): Labels of the train data (Shape: 8000x100). <br/>
-    * [X_val_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Data/X_train_100.csv): CPU frequency traces of 10 measurements from every 100 websites that constitutes the validation dataset. Each row refers to the 1000 samples/measurement (Shape: 1000x1000). <br/>
-    * [Y_val_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Data/X_train_100.csv): Labels of the validation data (Shape: 1000x100). <br/>
-    * [X_test_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Data/X_train_100.csv): CPU frequency traces of  the rest 10 measurements from every 100 websites that constitutes the test dataset which will be used in online phase. Each row refers to the 1000 samples/measurement (Shape: 1000x1000). <br/>
-    * [Y_test_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Data/X_train_100.csv): Labels of the test data (Shape: 1000x100). <br/>
+- [ondemand](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD_Ryzen_5/Chrome/ondemand)
+  * [Data](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/AMD_Ryzen_5/Chrome/ondemand/Data): The final preprocessed data splitted among train, validation, and test.<br/>
+    * [X_train_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Data/X_train_100.csv): CPU frequency traces of 80 measurements from every 100 websites that constitutes the train dataset. Each row refers to the 1000 samples/measurement (Shape: 8000x1000). <br/>
+    * [Y_train_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Data/X_train_100.csv): Labels of the train data (Shape: 8000x100). <br/>
+    * [X_val_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Data/X_train_100.csv): CPU frequency traces of 10 measurements from every 100 websites that constitutes the validation dataset. Each row refers to the 1000 samples/measurement (Shape: 1000x1000). <br/>
+    * [Y_val_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Data/X_train_100.csv): Labels of the validation data (Shape: 1000x100). <br/>
+    * [X_test_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Data/X_train_100.csv): CPU frequency traces of  the rest 10 measurements from every 100 websites that constitutes the test dataset which will be used in online phase. Each row refers to the 1000 samples/measurement (Shape: 1000x1000). <br/>
+    * [Y_test_100.csv](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Data/X_train_100.csv): Labels of the test data (Shape: 1000x100). <br/>
 
-  * [CNN_1D.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/CNN_1D.py): The CNN model trained during the offline phase for website fingerprinting. It takes the train and validation data as input and make the prediction. After the training complete, the model is saved as [Model1.h5](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Model1.h5).
-  * [Restored_model_val.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Restored_model_val.py): The pretrained CNN model which is saved as `Model1.h5`, is loaded to make a prediction on the validation dataset. 
-  * [Restored_model_test.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/Restored_model_test.py): The pretrained CNN model which is saved as `Model1.h5`, is loaded to make a prediction on the test dataset. This script is used to evaluate the performance of the prediction model during the online phase.
-  * [knn.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/knn.py), [rf.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/rf.py), [svm.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Chrome/ondemand/knn.py): The performance of the prediction model is tested with other ML algorithm-based model, such as Kth nearest neighbour (KNN), Random forest (RF), and Support Vector Machine (SVM).
+  * [CNN_1D.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/CNN_1D.py): The CNN model trained during the offline phase for website fingerprinting. It takes the train and validation data as input and make the prediction. After the training complete, the model is saved as [Model1.h5](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Model1.h5).
+  * [Restored_model_val.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Restored_model_val.py): The pretrained CNN model which is saved as `Model1.h5`, is loaded to make a prediction on the validation dataset. 
+  * [Restored_model_test.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/Restored_model_test.py): The pretrained CNN model which is saved as `Model1.h5`, is loaded to make a prediction on the test dataset. This script is used to evaluate the performance of the prediction model during the online phase.
+  * [knn.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/knn.py), [rf.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/rf.py), [svm.py](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Chrome/ondemand/knn.py): The performance of the prediction model is tested with other ML algorithm-based model, such as Kth nearest neighbour (KNN), Random forest (RF), and Support Vector Machine (SVM).
 
 
-### Instruction to run
+### Instruction to run:
 - Offline phase:
   * The `CNN_1D.py` is executed to train a model using the data collected from AMD Ryzen 5. The pretrained model is saved as `Model1.h5`. 
   * To look at the accuracy on validation dataset, Run the Restored_model_val.py. It is to be noted that, GPU support with appropriate environment (tensorflow backened with keras) is required for executing the code.
@@ -95,16 +94,31 @@ The website fingerprinting is tested with six different scaling governors avaial
 For the Tor Browser scenario, the explanation remains same, as we have named the file in the same manner as Chrome Browser scenario for the convenience. Although the test accuracy on the Tor browser is comparatively lower than the Google Chrome scenario, we also provide the top 5 accuracy for Tor browser scenario, which corresponds to the accuracy rate at which the correct website belongs among the top 5 predictions of the ML model as presented in Table 2. For this part, we have modified the `Restored_model_test.py` which will automaitcally save the raw predictions for different classes. Hence, Similar to google-chrome, the following commands need to run for reproducing the result: <br/>
   * `cd Tor/`<br/>
   * `./Restored_model_val.py`<br/>
-After running this python script, the test accuracy for Tor Browser will be printed out. In addition, the raw predictions for different classes will be saved as [Raw_Prediction_cnn.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Tor/Raw_Prediction_cnn.txt). Later, for finding out the Top 5 score as reported in Table 2, run the MATLAB code `confidance_score.m`.
+After running this python script, the test accuracy for Tor Browser will be printed out. In addition, the raw predictions for different classes will be saved as [Raw_Prediction_cnn.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Tor/Raw_Prediction_cnn.txt). Later, for finding out the Top 5 score as reported in Table 2, run the MATLAB code `confidance_score.m`.
 
-For ML models other than CNN (For example: SVM), run `./svm.py`. This will provide the accuracy as well as save the raw predictions as [Raw_Prediction_svm.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD%20Ryzen%205/Tor/Raw_Prediction_svm.txt). Update the `confidance_score.m` by replacing the `Raw_Prediction_cnn.txt` file with `Raw_Prediction_svm.txt`. Run the `confidance_score.m` to get the Top 5 score for the Tor Browser.
+For ML models other than CNN (For example: SVM), run `./svm.py`. This will provide the accuracy as well as save the raw predictions as [Raw_prediction_svm.txt](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/blob/main/AMD_Ryzen_5/Tor/Raw_prediction_svm.txt). Update the `confidance_score.m` by replacing the `Raw_Prediction_cnn.txt` file with `Raw_Prediction_svm.txt`. Run the `confidance_score.m` to get the Top 5 score for the Tor Browser.
 
 It is to be noted that, for Tor Browser scenario, we have carried out the experiment only for the default scaling governor of the device.
 
-## Universal ML Model for different CPU models 
+## Universal ML Model for different CPU models: 
 In the previous experiment, we trained separate ML models for Intel, AMD, and ARM architectures to obtain the highest website fingerprinting accuracy. However, it is still unclear whether it is possible to replace the individual ML models with a universal ML model trained with the CPU frequency data from several micro-architectures. Thus, an attacker can use a combined ML model without requiring to know the exact targeted microarchitecture for website fingerprinting. For this purpose, initially, we combined the CPU frequency data collected with powersave governor from both Intel Tiger Lake and Intel Comet Lake architectures to train a universal CNN model and evaluated the performance of the universal model with the test
-data. The [Intel combined](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/Universal%20ML/Intel%20combined) directory incorporates the relevant data and codes.
+data. The [Intel_combined](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/Universal_ML/Intel_combined) directory incorporates the relevant data and codes.
 
-`cd Universal ML/Intel combined/` <br/>
+`cd Universal_ML/Intel_combined/` <br/>
 `./Restored_model_test.py` <br/>
+
+Later, we added the CPU frequency data set from the AMD Ryzen 5 architecture collected from ondemand governor and created a universal cross-architecture ML model. The [Intel_amd_combined](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/Universal_ML/Intel_amd_combined) directory incorporates the relevant data and codes.  
+
+`cd Universal_ML/Intel_amd_combined/` <br/>
+`./Restored_model_test.py` <br/>
+
+All the results are reported in Table 5 of the paper.
+
+# Password Detection:
+In the password detection scenario, we assume that a phone user enters her password to log into her account in a banking application. Our goal is not to outperform the existing works in the keystroke attack literature, but rather demonstrates DF-SCA attack has sufficient resolution and accuracy to perform a password detection attack. For the target, Bank of America (BoA) mobile application is chosen.
+
+The CPU frequnecy traces for different profiles passwords mentioned in Table 9 of the paper are made available in [mat_files_password](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/ARM_Cortex_A-73/Keystroke/mat_files_passwords). Based on the length of characters, individual frequnency traces of different passwords are collected, preprocessed, and saved as .mat file. In [Artifact_dataset_model_Code_Keystroke](https://github.com/Diptakuet/DF-SCA-Dynamic-Frequency-Side-Channel-Attacks-are-Practical/tree/main/ARM_Cortex_A-73/Keystroke/Artifact_dataset_model_Code_Keystroke), the splitted data among training and test are included with the proposed knn model. 
+* `cd ARM_Cortex_A-73/Keystroke/Artifact_dataset_model_Code_Keystroke/` <br/>
+* Run `knn_all.m` in MATLAB
+
 
