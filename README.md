@@ -153,6 +153,8 @@ Later, we added the CPU frequency data set from the AMD Ryzen 5 architecture col
 
 All the results are reported in Table 5 of the paper.
 
+It is to be noted that, some of the saved models `Model1.h5` are uploaded as a zip file due to large size of the files. Please check before running the code, whether the h5 file is zipped or not. If it zipped, please unzip it prior to running the code.
+
 # Password Detection:
 In the password detection scenario, we assume that a phone user enters her password to log into her account in a banking application. Our goal is not to outperform the existing works in the keystroke attack literature, but rather demonstrates DF-SCA attack has sufficient resolution and accuracy to perform a password detection attack. For the target, Bank of America (BoA) mobile application is chosen.
 
