@@ -64,7 +64,7 @@ print("Test accuracy:", score[1])
 # In[17]:
 
 predict_x=model.predict(x_test) 
-np.savetxt('Raw_Prediction.txt',predict_x)
+np.savetxt('Raw_prediction_cnn.txt',predict_x)
 classes_x=np.argmax(predict_x,axis=1)
 print(classes_x)
 np.savetxt('Prediction.txt',classes_x)
